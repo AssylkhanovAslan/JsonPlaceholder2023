@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import kz.tutorial.jsonplaceholdertypicode.domain.GetPostsUseCase
 import kz.tutorial.jsonplaceholdertypicode.domain.Post
+import timber.log.Timber
 
 class PostsViewModel(private val getPostsUseCase: GetPostsUseCase) : ViewModel() {
 
@@ -19,7 +20,7 @@ class PostsViewModel(private val getPostsUseCase: GetPostsUseCase) : ViewModel()
 
     private fun getPosts() {
         viewModelScope.launch {
-            val posts = getPostsUseCase()
+            val posts = getPostsUseCase.invoke()
             _postsLiveData.postValue(posts)
         }
     }
