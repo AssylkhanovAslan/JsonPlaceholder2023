@@ -7,6 +7,8 @@
 #Here is the basic .gitignore
 #Usually, that's what IDE provides, but for some reason it didn't triggered this time
 
+#Ah, later. Now I want to complete the details
+
 *.iml
 .gradle
 /local.properties

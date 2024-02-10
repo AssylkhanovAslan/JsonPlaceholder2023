@@ -6,11 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kz.tutorial.jsonplaceholdertypicode.R
 import kz.tutorial.jsonplaceholdertypicode.constants.POST_ID_KEY
+import kz.tutorial.jsonplaceholdertypicode.presentation.comments.CommentsAdapter
+import kz.tutorial.jsonplaceholdertypicode.presentation.extensions.openEmailWithAddress
+import kz.tutorial.jsonplaceholdertypicode.presentation.utils.SpaceItemDecoration
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+
 
 class PostDetailsFragment : Fragment() {
 
@@ -34,7 +39,7 @@ class PostDetailsFragment : Fragment() {
     lateinit var tvBody: TextView
     lateinit var tvShowAll: TextView
 
-//    lateinit var adapter: PostAdapter
+    lateinit var commentsAdapter: CommentsAdapter
 
 
     override fun onCreateView(
@@ -61,20 +66,21 @@ class PostDetailsFragment : Fragment() {
     }
 
     private fun initAdapter() {
-//        adapter = PostAdapter(layoutInflater)
-//        adapter.listener = ClickListener {
-//            Timber.e("Post clicked = $it")
-//        }
+        commentsAdapter = CommentsAdapter(layoutInflater) { email ->
+            context?.openEmailWithAddress(email)
+        }
     }
 
     private fun initRecycler() {
-//        val currentContext = context ?: return
-//
-//        rvPosts.adapter = adapter
-//        rvPosts.layoutManager = LinearLayoutManager(currentContext)
-//
-//        val spaceItemDecoration = SpaceItemDecoration(verticalSpaceInDp = 8, horizontalSpaceInDp = 16)
-//        rvPosts.addItemDecoration(spaceItemDecoration)
+        val currentContext = context ?: return
+
+        rvComments.adapter = commentsAdapter
+        rvComments.layoutManager = LinearLayoutManager(currentContext)
+
+        val spaceItemDecoration =
+            SpaceItemDecoration(verticalSpaceInDp = 8, horizontalSpaceInDp = 16)
+        rvComments.addItemDecoration(spaceItemDecoration)
+
     }
 
     private fun initObservers() {
@@ -84,6 +90,9 @@ class PostDetailsFragment : Fragment() {
         }
         vm.userLiveData.observe(viewLifecycleOwner) { user ->
             tvAuthor.text = user.name
+        }
+        vm.commentsLiveData.observe(viewLifecycleOwner) { comments ->
+            commentsAdapter.submitList(comments)
         }
     }
 }
