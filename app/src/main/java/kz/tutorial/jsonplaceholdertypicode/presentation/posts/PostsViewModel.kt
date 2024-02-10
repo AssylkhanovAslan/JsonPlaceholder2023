@@ -5,9 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import kz.tutorial.jsonplaceholdertypicode.domain.GetPostsUseCase
-import kz.tutorial.jsonplaceholdertypicode.domain.Post
-import timber.log.Timber
+import kz.tutorial.jsonplaceholdertypicode.domain.use_case.GetPostsUseCase
+import kz.tutorial.jsonplaceholdertypicode.domain.entity.Post
 
 class PostsViewModel(private val getPostsUseCase: GetPostsUseCase) : ViewModel() {
 

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import kz.tutorial.jsonplaceholdertypicode.domain.Post
+import kz.tutorial.jsonplaceholdertypicode.domain.entity.Post
 import kz.tutorial.jsonplaceholdertypicode.R
 import kz.tutorial.jsonplaceholdertypicode.presentation.utils.ClickListener
 

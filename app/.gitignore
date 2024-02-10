@@ -1,1 +1,24 @@
 /build
+
+#Not good. Need to update.
+#This is the file that git checks to know what not to include
+#Let me copy the data from other projects
+#
+#Here is the basic .gitignore
+#Usually, that's what IDE provides, but for some reason it didn't triggered this time
+
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
