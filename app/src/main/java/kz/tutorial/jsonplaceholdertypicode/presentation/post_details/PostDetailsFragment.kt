@@ -19,16 +19,6 @@ import org.koin.core.parameter.parametersOf
 
 class PostDetailsFragment : Fragment() {
 
-    companion object {
-        fun newInstance(postId: Int): PostDetailsFragment {
-            val args = Bundle()
-            args.putInt(POST_ID_KEY, postId)
-            val fragment = PostDetailsFragment()
-            fragment.arguments = args
-            return fragment
-        }
-    }
-
     private val vm: PostDetailsViewModel by viewModel {
         parametersOf(arguments?.getInt(POST_ID_KEY, 0))
     }

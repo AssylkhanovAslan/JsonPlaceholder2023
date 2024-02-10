@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/posts">
+
+    <fragment
+        android:id="@+id/posts"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.posts.PostsFragment">
+        <action app:destination="@+id/post_details" android:id="@+id/to_post_details"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/post_details"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.post_details.PostDetailsFragment">
+        <argument
+            android:name="post_id"
+            app:argType="integer"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>
