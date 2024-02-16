@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Posts"
+        android:id="@+id/posts_icon"
+        android:icon="@drawable/posts"/>
+    <item android:title="Albums"
+        android:id="@+id/albums_icon"
+        android:icon="@drawable/albums"/>
+    <item android:title="Users"
+        android:id="@+id/users_icon"
+        android:icon="@drawable/users"/>
+    <item android:title="Profile"
+        android:id="@+id/profile_icon"
+        android:icon="@drawable/profile"/>
+</menu>
