@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kz.tutorial.jsonplaceholdertypicode.R
 import kz.tutorial.jsonplaceholdertypicode.constants.POST_ID_KEY
 import kz.tutorial.jsonplaceholdertypicode.presentation.comments.CommentsAdapter
@@ -70,7 +71,6 @@ class PostDetailsFragment : Fragment() {
         val spaceItemDecoration =
             SpaceItemDecoration(verticalSpaceInDp = 8, horizontalSpaceInDp = 16)
         rvComments.addItemDecoration(spaceItemDecoration)
-
     }
 
     private fun initObservers() {
