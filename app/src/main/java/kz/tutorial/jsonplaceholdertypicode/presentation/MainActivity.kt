@@ -10,8 +10,8 @@ import kz.tutorial.jsonplaceholdertypicode.R
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var bnvMain: BottomNavigationView
-    lateinit var navController: NavController
+    private lateinit var bnvMain: BottomNavigationView
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

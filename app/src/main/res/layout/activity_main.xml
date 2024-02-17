@@ -20,6 +20,8 @@
         android:id="@+id/bnv_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/ui_01"
+        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/menu_main"/>
 
 </LinearLayout>
