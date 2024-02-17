@@ -13,13 +13,16 @@ class TutorialApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         initTimber()
-        startKoin {
-            modules(networkModule, viewModelModule, repositoryModule, useCaseModule)
-        }
+        initDI()
     }
 
     private fun initTimber() {
         Timber.plant(Timber.DebugTree())
     }
 
+    private fun initDI() {
+        startKoin {
+            modules(networkModule, viewModelModule, repositoryModule, useCaseModule)
+        }
+    }
 }

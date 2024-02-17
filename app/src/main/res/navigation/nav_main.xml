@@ -2,10 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_main"
-    app:startDestination="@id/posts">
-
+    app:startDestination="@id/menu_posts">
+<!--Здесь мы не мэтчили айди и поэтому нажатие на меню айтем поста не открывает посты-->
+<!--    Вот теперь всё работает)-->
     <fragment
-        android:id="@+id/posts"
+        android:id="@+id/menu_posts"
         android:name="kz.tutorial.jsonplaceholdertypicode.presentation.posts.PostsFragment">
         <action app:destination="@+id/post_details" android:id="@+id/to_post_details"/>
     </fragment>
@@ -17,6 +18,22 @@
             android:name="post_id"
             app:argType="integer"
             app:nullable="false" />
+    </fragment>
+
+<!--    If we match the ids with the menu items, it should associate them and automatically trigger the required fragment-->
+    <fragment
+        android:id="@+id/menu_albums"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.albums.AlbumsFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_users"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.users.UsersFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_profile"
+        android:name="kz.tutorial.jsonplaceholdertypicode.presentation.profile.ProfileFragment">
     </fragment>
 
 </navigation>
