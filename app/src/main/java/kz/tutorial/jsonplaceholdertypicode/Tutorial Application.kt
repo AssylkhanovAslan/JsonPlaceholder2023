@@ -1,6 +1,7 @@
 package kz.tutorial.jsonplaceholdertypicode
 
 import android.app.Application
+import kz.tutorial.jsonplaceholdertypicode.di.mapperModule
 import kz.tutorial.jsonplaceholdertypicode.di.networkModule
 import kz.tutorial.jsonplaceholdertypicode.di.repositoryModule
 import kz.tutorial.jsonplaceholdertypicode.di.useCaseModule
@@ -22,7 +23,7 @@ class TutorialApplication : Application() {
 
     private fun initDI() {
         startKoin {
-            modules(networkModule, viewModelModule, repositoryModule, useCaseModule)
+            modules(networkModule, viewModelModule, repositoryModule, useCaseModule, mapperModule)
         }
     }
 }

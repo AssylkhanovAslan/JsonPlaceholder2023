@@ -10,4 +10,8 @@ class UserRepositoryImpl(
     override suspend fun getUser(userId: Int): User {
         return mainApi.getUser(userId)
     }
+
+    override suspend fun getUsers(): List<User> {
+        return mainApi.getUsers()
+    }
 }
